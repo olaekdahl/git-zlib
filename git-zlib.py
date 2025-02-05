@@ -11,7 +11,10 @@
 # Code source: https://stackoverflow.com/questions/70944136/decompressing-git-objects-with-zlib
 import zlib
 
-filename = '/home/ola/git-demo/.git/objects/9e/68dfd99058b4be4748809b3229e371c1cbb927' 
+filename = '/home/ola/git-zlib/.git/objects/9e/68dfd99058b4be4748809b3229e371c1cbb927' 
 compressed_contents = open(filename, 'rb').read() 
 decompressed_contents = zlib.decompress(compressed_contents) 
 print(decompressed_contents)
+
+# Output:
+# b"blob 182\x00import zlib\n\nfilename = '/path_to_file' \ncompressed_contents = open(filename, 'rb').read() \ndecompressed_contents = zlib.decompress(compressed_contents) \nprint(decompressed_contents)"
